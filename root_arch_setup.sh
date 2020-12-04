@@ -1,6 +1,7 @@
 #!/bin/bash
 pacman -Syuu
 pacman -S vim yay base-devel xclip
+echo "options snd_hda_intel dmic_detect=0" > /etc/modprobe.d/disable_dmic.conf
 
 if [[ $XDG_CURRENT_DESKTOP == "XFCE" ]]
 then
