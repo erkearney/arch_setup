@@ -1,9 +1,9 @@
 #!/bin/bash
 read -r -p "Enter your github email: " GITHUBEMAIL
-ssh-keygen -t ed25519 -C "$GITHUBEMAIL"
+ssh-keygen -t rsa -b 4096 -C "$GITHUBEMAIL"
 eval "$(ssh-agent -s)"
-ssh-add "/home/$(logname)/.ssh/id_ed25519"
-xclip -selection clipboard < ~/.ssh/id_ed25519.pub
+ssh-add ~/.ssh/id_rsa
+xclip -sel clip ~/.ssh/id_rsa.pub
 echo "Add the SSH key to your github account"
 firefox https://github.com/settings/keys
 
