@@ -1,4 +1,5 @@
 #!/bin/bash
+export EDITOR=vim
 read -r -p "Enter your github email: " GITHUBEMAIL
 ssh-keygen -t rsa -b 4096 -C "$GITHUBEMAIL"
 eval "$(ssh-agent -s)"
