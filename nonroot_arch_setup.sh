@@ -14,6 +14,8 @@ read -r -p "Do you want to install Signal? [y/N] " SIGNAL
 if [[ "$SIGNAL" == 'y' ]] 
 then
 yay -S signal-desktop-beta
+signal-desktop-beta
+read -n 1 -s -r -p "Scan the QR code in Signal, Press any key to continue"
 fi
 
 read -r -p "Do you want to install Minecraft? [y/N] " MINECRAFT
@@ -26,3 +28,6 @@ cd ..
 rm -r minecraft-launcher
 fi
 
+
+#<property name="xfwm4" type="empty">
+#<property name="&lt;Super&gt;Return" type="string" value="exo-open --launch TerminalEmulator"/>
