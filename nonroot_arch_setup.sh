@@ -18,6 +18,11 @@ setupconfigfiles() {\
     ln $HOME/Documents/config-files/vimrc $HOME/.vimrc
     export EDITOR=vim ;}
 
+downloadwallpapers() {\
+    mkdir ../Wallpapers/
+    wget https://www.hdwallpapers.in/download/waterfall_between_rock_pouring_on_river_4k_hd_nature-1920x1080.jpg
+;}
+
 installmiscprograms() {\
     read -r -p "Do you want to install Signal? [y/N] " SIGNAL
     if [[ "$SIGNAL" == 'y' ]] 
@@ -36,6 +41,7 @@ installmiscprograms() {\
         cd ..
         rm -r minecraft-launcher
     fi ;}
+
 
 setupgithub
 setupconfigfiles

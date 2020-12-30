@@ -9,7 +9,7 @@ fixsoundissue() { \
 
 updateinstallpkgs() {\
     pacman -Syuu
-    pacman -S vim yay base-devel xclip xorg-xinput i3-gaps dmenu i3status ttf-linux-libertine ttf-inconsolata ;}
+    pacman -S vim yay base-devel xclip xorg-xinput i3-gaps dmenu i3status ttf-linux-libertine ttf-inconsolata zathura feh xwallpaper ;}
 
 updateinstallpkgs
 systembeepoff
