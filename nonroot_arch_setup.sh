@@ -7,7 +7,6 @@ setupgithub() {\
     eval "$(ssh-agent -s)"
     ssh-add ~/.ssh/id_rsa
     xclip -sel clip ~/.ssh/id_rsa.pub
-    echo "Add the SSH key to your github account"
     firefox https://github.com/settings/keys 
     read -p "Go enter your new SSH key, Press enter to continue" ;}
 
