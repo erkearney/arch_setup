@@ -2,6 +2,7 @@
 
 setupgithub() {\
     read -r -p "Enter your github email: " GITHUBEMAIL
+    git config --global user.email "$GITHUBEMAIL"
     ssh-keygen -t rsa -b 4096 -C "$GITHUBEMAIL"
     eval "$(ssh-agent -s)"
     ssh-add ~/.ssh/id_rsa
