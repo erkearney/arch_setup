@@ -20,8 +20,8 @@ setupconfigfiles() {\
 
 downloadwallpapers() {\
     shufflecommand='mv "$(find ~/Documents/Wallpapers -name "*.jpg" -type f | shuf -n 1)"'
-    mkdir ../Wallpapers/
-    cd ../Wallpapers/
+    mkdir $HOME/Documents/Wallpapers/
+    cd $HOME/Documents/Wallpapers/
     wget -O waterfall.jpg https://www.hdwallpapers.in/download/waterfall_between_rock_pouring_on_river_4k_hd_nature-1920x1080.jpg
     wget -O autumn_road.jpg https://www.hdwallpapers.in/download/road_with_leaves_between_autumn_trees_hd_nature-1920x1080.jpg
     wget -O autumn_tree.jpg https://www.hdwallpapers.in/download/red_autumn_trees_in_forest_hd_nature-1920x1080.jpg
