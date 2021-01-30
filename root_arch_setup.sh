@@ -10,7 +10,7 @@ fixsoundissue() { \
 updateinstallpkgs() {\
     pacman -Syuu
     pacman -Syy vim yay base-devel xclip xorg-xinput \
-                i3-gaps dmenu i3status ttf-linux-libertine \
+                i3-gaps dmenu i3status xterm ttf-linux-libertine \
                 ttf-inconsolata zathura feh xwallpaper ;}
 
 setupgithub() {\
