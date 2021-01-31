@@ -16,6 +16,7 @@ setupconfigfiles() {\
     ln $HOME/Documents/config-files/Xresouces $HOME/.Xresources
     ln $HOME/Documents/config-files/i3-config $HOME/.config/i3/config
     ln $HOME/Documents/config-files/vimrc $HOME/.vimrc
+    ln $HOME/Document/config-files/login_profile $HOME/.profile
     export EDITOR=vim ;}
 
 downloadwallpapers() {\
