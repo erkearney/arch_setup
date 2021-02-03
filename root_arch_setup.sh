@@ -9,7 +9,7 @@ fixsoundissue() { \
 
 updateinstallpkgs() {\
     pacman -Syuu
-    pacman -Syy vim yay base-devel xclip xorg-xinput \
+    pacman -Syy vim nextcloutd-cleint base-devel xclip xorg-xinput \
                 i3-gaps dmenu i3status xterm ttf-linux-libertine \
                 ttf-inconsolata zathura feh xwallpaper nmap ;}
 

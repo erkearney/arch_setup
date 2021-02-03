@@ -14,6 +14,7 @@ setupconfigfiles() {\
     #wget -O /home/$(logname)/.vimrc https://raw.githubusercontent.com/erkearney/my-vimrc/master/.vimrc
     git clone git@github.com:erkearney/config-files.git $HOME/Documents/
     ln $HOME/Documents/config-files/Xresouces $HOME/.Xresources
+    xrdb -merg $HOME/.Xresources
     ln $HOME/Documents/config-files/i3-config $HOME/.config/i3/config
     ln $HOME/Documents/config-files/vimrc $HOME/.vimrc
     ln $HOME/Document/config-files/login_profile $HOME/.profile
@@ -36,7 +37,11 @@ installmiscprograms() {\
     read -r -p "Do you want to install Signal? [y/N] " SIGNAL
     if [[ "$SIGNAL" == 'y' ]] 
     then
-        yay -S signal-desktop-beta
+        git clone https://aur.archlinux.org/signal-desktop-beta.git
+        cd signal-desktop-beta
+        makepkg -si
+        cd ..
+        rm -r signal-desktop-beta | yes
         signal-desktop-beta
         read -n 1 -s -r -p "Scan the QR code in Signal, Press any key to continue"
     fi
@@ -48,8 +53,16 @@ installmiscprograms() {\
         cd minecraft-launcher
         makepkg -si
         cd ..
-        rm -r minecraft-launcher
+        rm -r minecraft-launcher | yes
     fi ;}
+
+    git clone https://aur.archlinux.org/protonmail-bridge.git
+    cd protonmail-bridge
+    makepkg -si
+    cd ..
+    rm -r protonmail-brdige | yes
+    thunderbird
+    read -n 1 -s -r -p "Setup email, Press any key to continue"
 
 
 setupgithub
