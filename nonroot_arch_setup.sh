@@ -41,7 +41,7 @@ installmiscprograms() {\
         cd signal-desktop-beta
         makepkg -si
         cd ..
-        rm -r signal-desktop-beta | yes
+        rm -r signal-desktop-beta
         signal-desktop-beta
         read -n 1 -s -r -p "Scan the QR code in Signal, Press any key to continue"
     fi
@@ -53,16 +53,16 @@ installmiscprograms() {\
         cd minecraft-launcher
         makepkg -si
         cd ..
-        rm -r minecraft-launcher | yes
-    fi ;}
+        rm -r minecraft-launcher
+    fi 
 
     git clone https://aur.archlinux.org/protonmail-bridge.git
     cd protonmail-bridge
     makepkg -si
     cd ..
-    rm -r protonmail-brdige | yes
+    rm -r protonmail-brdige
     thunderbird
-    read -n 1 -s -r -p "Setup email, Press any key to continue"
+    read -n 1 -s -r -p "Setup email, Press any key to continue" ;}
 
 
 setupgithub
