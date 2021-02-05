@@ -13,11 +13,12 @@ setupgithub() {\
 setupconfigfiles() {\
     #wget -O /home/$(logname)/.vimrc https://raw.githubusercontent.com/erkearney/my-vimrc/master/.vimrc
     git clone git@github.com:erkearney/config-files.git $HOME/Documents/
-    ln $HOME/Documents/config-files/Xresouces $HOME/.Xresources
+    ln $HOME/Documents/Config-files/Xresouces $HOME/.Xresources
     xrdb -merg $HOME/.Xresources
-    ln $HOME/Documents/config-files/i3-config $HOME/.config/i3/config
-    ln $HOME/Documents/config-files/vimrc $HOME/.vimrc
-    ln $HOME/Document/config-files/login_profile $HOME/.profile
+    ln $HOME/Documents/Config-files/i3-config $HOME/.config/i3/config
+    ln $HOME/Documents/Config-files/vimrc $HOME/.vimrc
+    ln $HOME/Document/Config-files/login_profile $HOME/.profile
+    ln $HOME/Documents/Config-files/bashrc $HOME/.bashrc
     export EDITOR=vim ;}
 
 downloadwallpapers() {\
@@ -34,7 +35,21 @@ downloadwallpapers() {\
     echo xwallpaper --zoom ~/.config/wall.png >> ~/.xprofile ;}
 
 installmiscprograms() {\
+    git clone https://aur.archlinux.org/packages/transset-df/
+    cd transset-df
+    makepkg -si
+    cd ..
+    rm -r transset-df
     read -r -p "Do you want to install Signal? [y/N] " SIGNAL
+
+    git clone https://aur.archlinux.org/protonmail-bridge.git
+    cd protonmail-bridge
+    makepkg -si
+    cd ..
+    rm -r protonmail-brdige
+    thunderbird
+    read -n 1 -s -r -p "Setup email, Press any key to continue"
+
     if [[ "$SIGNAL" == 'y' ]] 
     then
         git clone https://aur.archlinux.org/signal-desktop-beta.git
@@ -54,16 +69,7 @@ installmiscprograms() {\
         makepkg -si
         cd ..
         rm -r minecraft-launcher
-    fi 
-
-    git clone https://aur.archlinux.org/protonmail-bridge.git
-    cd protonmail-bridge
-    makepkg -si
-    cd ..
-    rm -r protonmail-brdige
-    thunderbird
-    read -n 1 -s -r -p "Setup email, Press any key to continue" ;}
-
+    fi ;}
 
 setupgithub
 setupconfigfiles

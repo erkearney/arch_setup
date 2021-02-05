@@ -11,7 +11,7 @@ updateinstallpkgs() {\
     pacman -Syuu
     pacman -Syy vim nextcloutd-cleint base-devel xclip xorg-xinput \
                 i3-gaps dmenu i3status xterm ttf-linux-libertine \
-                ttf-inconsolata zathura feh xwallpaper nmap ;}
+                ttf-inconsolata zathura feh xwallpaper nmap xcompmgr ;}
 
 setupgithub() {\
     read -r -p "Enter your github email: " GITHUBEMAIL
