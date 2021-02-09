@@ -9,8 +9,8 @@ fixsoundissue() { \
 
 updateinstallpkgs() {\
     pacman -Syuu
-    pacman -Syy vim nextcloutd-cleint base-devel xclip xorg-xinput \
-                i3-gaps dmenu i3status xterm ttf-linux-libertine \
+    pacman -Syy vim nextcloutd-cleint base-devel xclip xorg-xinput spectacle \
+                i3-gaps dmenu i3status xterm ttf-linux-libertine sof-firmware \
                 ttf-inconsolata zathura feh xwallpaper nmap xcompmgr ;}
 
 setupgithub() {\
