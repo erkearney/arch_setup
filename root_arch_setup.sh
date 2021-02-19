@@ -5,27 +5,39 @@ systembeepoff() {
     echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf ;}
 
 updateinstallpkgs() {
+    pacman-mirrors --fasttrack
     pacman -Syuu
     pacman -Syy vim \
-		nextcloud-client \
 		base-devel \
+		nmap \
 		xclip \
 		xorg-xinput \
-		spectacle \
-                i3-gaps \
-		dmenu \
-		i3status \
 		xterm \
+		xcompmgr \
+		xwallpaper \
 		ttf-linux-libertine \
-		sof-firmware \
                 ttf-inconsolata \
+                i3-gaps \
+		i3status \
+		dmenu \
 		zathura \
 		feh \
-		xwallpaper \
-		nmap \
-		xcompmgr \
-		alsa-utils ;}
+		spectacle \
+		nextcloud-client ;}
 
 
-updateinstallpkgs
+configuredellvostro7590() {
+    pacman -Syy sof-firmware \
+		alsa-utils \
+		thermald \
+		tlp 
+
+    systemctl start thermald.service
+    systemctl enable thermald.service 
+    systemctl start tlp.service
+    systemctl enable tlp.service ;}
+
+
 systembeepoff
+updateinstallpkgs
+configuredellvostro7590
