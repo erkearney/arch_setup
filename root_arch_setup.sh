@@ -20,8 +20,6 @@ updateinstallpkgs() {
                 i3-gaps \
 		i3status \
 		dmenu \
-		zathura \
-		feh \
 		spectacle \
 		nextcloud-client ;}
 
@@ -30,12 +28,19 @@ configuredellvostro7590() {
     pacman -Syy sof-firmware \
 		alsa-utils \
 		thermald \
-		tlp 
+		tlp \
+		xorg-xbacklight
 
     systemctl start thermald.service
     systemctl enable thermald.service 
     systemctl start tlp.service
-    systemctl enable tlp.service ;}
+    systemctl enable tlp.service 
+
+    echo 'Section "Device"
+	Identifier  "Intel Graphics" 
+	Driver      "intel"
+	Option      "Backlight"  "intel_backlight"
+    EndSection' > /etc/X11/xorg.conf.d/20-intel.conf ;}
 
 
 systembeepoff
