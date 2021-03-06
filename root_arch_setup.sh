@@ -31,6 +31,11 @@ configuredellvostro7590() {
 		tlp \
 		xorg-xbacklight
 
+    echo '#Disable suspend on laptop lid close
+
+    HandleLidSwitch=ignore' >> /etc/systemd/logind.conf
+
+    #Battery improvements
     systemctl start thermald.service
     systemctl enable thermald.service 
     systemctl start tlp.service
@@ -41,6 +46,7 @@ configuredellvostro7590() {
 	Driver      "intel"
 	Option      "Backlight"  "intel_backlight"
     EndSection' > /etc/X11/xorg.conf.d/20-intel.conf ;}
+
 
 
 systembeepoff
