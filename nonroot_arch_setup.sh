@@ -18,10 +18,11 @@ setupconfigfiles() {\
     ln $HOME/Documents/Config-files/vimrc $HOME/.vimrc
     ln $HOME/Document/Config-files/login_profile $HOME/.profile
     ln $HOME/Documents/Config-files/bashrc $HOME/.bashrc
+    ln $HOME/Documents/Config-files/50-mouse-acceleration.conf /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
     export EDITOR=vim ;}
 
 downloadwallpapers() {\
-    shufflecommand='mv "$(find ~/Documents/Wallpapers -name "*.jpg" -type f | shuf -n 1)"'
+    shufflecommand='mv "$(find ~/Wallpapers -name "*.jpg" -type f | shuf -n 1)"'
     mkdir $HOME/Wallpapers/
     cd $HOME/Wallpapers/
     wget -O waterfall.jpg https://www.hdwallpapers.in/download/waterfall_between_rock_pouring_on_river_4k_hd_nature-1920x1080.jpg
