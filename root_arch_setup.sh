@@ -29,7 +29,8 @@ configuredellvostro7590() {
 		alsa-utils \
 		thermald \
 		tlp \
-		xorg-xbacklight
+		xorg-xbacklight \
+		mesa
 
     echo '#Disable suspend on laptop lid close
 
