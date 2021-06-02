@@ -19,9 +19,11 @@ updateinstallpkgs() {
                 ttf-inconsolata \
                 i3-gaps \
 		i3status \
+		qtile \
 		dmenu \
 		spectacle \
-		nextcloud-client ;}
+		nextcloud-client \
+		openvpn ;}
 
 
 configuredellvostro7590() {
